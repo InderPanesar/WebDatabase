@@ -1,3 +1,4 @@
+<!-- The format of the email when a request for an item has been disapproved. -->
 @component('mail::message')
 # Item Request
 

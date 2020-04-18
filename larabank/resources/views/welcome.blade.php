@@ -70,9 +70,12 @@
 @section('content')
     <body>
         <div class="flex-center position-ref full-height">
+			<!-- Check if the user has logged in. -->
             @if (Route::has('login'))
                 <div class="top-right links">
+					<!-- If authenticated. -->
                     @auth
+						<!-- Check if user is admin. -->
 						@if (Auth::user()->is_admin)
 								<a class="flex" href="{{ route('requesttable') }}">View Requests</a>
 						@else
@@ -87,17 +90,9 @@
 
             <div class="content">
 			               			
-				<div class="flex-center m-b-md">
-					@if(date("H") >= "12") 
-							<h2>Good Afternoon!</h2>
-						@else 
-							<h2>Good Morning!</h2>
-					@endif
-
-
-				</div>
                 <div class="title flex-center m-b-md">
 					@if(Route::has('login')) 
+						<!-- If logged in then show the users name. -->
 						@auth								
 							<h2>Welcome back to FiLo! - {{Auth::User()->name}}</h2>
 						@else	
@@ -105,6 +100,10 @@
 						@endauth
 					@endif
                 </div>
+				<!-- Shows the day and a well wishes message. -->
+				<div class="flex-center m-b-md">
+					<h2>Hopefully you are having a good {{date('l')}}.</h2>
+				</div>
 				<footer> Created by Inder Panesar | 180039762 | Aston University </footer>
 
             </div>

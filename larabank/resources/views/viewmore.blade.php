@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
+<!-- This is the view the user will see if they are trying to view more details on the items. -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header"><center>{{ __('View Items') }}</center></div>
 				<div class="content">
-
-						
-						<table class="table table-striped table-hover centre">
+					<!-- Table which holds the information of all the items -->
+					<table class="table table-striped table-hover centre">
 						<center>
 							<tr>
 								<th><strong>Type:</strong></th>
@@ -44,7 +44,12 @@
 								<th><strong>Image:</strong></th>
 							</tr>
 							<tr>
-								<td><img src={{url($founditems['image'])}} class="img-fluid"></td>
+								<!-- All the images -->
+								<td>
+									@foreach(explode("|",$founditems['image']) as $image)
+										<img src={{url('https://180039762.cs2410-web01pvm.aston.ac.uk/'.$image)}} class="img-fluid">
+									@endforeach
+								</td>
 							</tr>
 							<tr>
 								<th><strong>Added by:</strong></th>
@@ -53,9 +58,7 @@
 								<td>{{$user['name']}}</td>
 							</tr>
 						</center>	
-						</table>
-
-					@csrf
+					</table>
 				</div>
             </div>
         </div>

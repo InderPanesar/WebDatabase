@@ -1,3 +1,4 @@
+<!-- The format of the email when a request for an item has been approved. -->
 @component('mail::message')
 # Item Request
 # Item ID: {{ $itemid }}

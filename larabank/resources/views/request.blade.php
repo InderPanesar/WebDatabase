@@ -1,10 +1,16 @@
 @extends('layouts.app')
 @section('content')
+<!-- This is the view a user will see if they attempt to request an item -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header"><center>{{ __('Request Item') }}</center></div>
+				<!-- The code below will display any error messages that happen. -->
+				@if($errors->any())
+					{!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+				@endif
+				<!-- Display all the item details -->
 				<div class="content">		
 					<table class="table table-striped table-hover centre">
 						<center>
@@ -30,7 +36,9 @@
 					</table>
 						
 			       <form method="POST" action=" {{ route('request', $founditems['id']) }}" enctype="multipart/form-data">
-                        @csrf
+                        <!-- The CSRF TOKEN helps protect against Cross-Site Request Forgery. -->
+						@csrf
+						<!-- The user types in the reason for the request. -->
                         <div class="form-group row">
                             <label for="reason" class="col-md-12 col-form-label text-md-center">{{ __('Reason') }}</label>
                             <div class="col-md-12">
@@ -42,6 +50,7 @@
                                 @enderror
                             </div>
                         </div>
+						<!-- The user submits the reason for the request -->
 						<div class="form-group row">
                             <div class="col-md-12">
 								<input id="submit" type="submit" class="form-control @error('submit') is-invalid @enderror">
