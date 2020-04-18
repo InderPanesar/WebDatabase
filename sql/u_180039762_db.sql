@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 18, 2020 at 02:22 PM
+-- Generation Time: Apr 18, 2020 at 06:07 PM
 -- Server version: 5.7.29-0ubuntu0.18.04.1
 -- PHP Version: 7.3.16-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -59,11 +59,11 @@ CREATE TABLE `found_items` (
 --
 
 INSERT INTO `found_items` (`id`, `created_at`, `updated_at`, `type`, `color`, `location`, `date_found`, `description`, `image`, `userid`) VALUES
-(31, NULL, '2020-04-18 11:57:28', 'jewellery', 'Red and Black Dial with a Black Face', 'London', '2020-02-05', 'Nice condition of the frame and watch glass.', 'images/1586391062.jpg|images/1586391063.jpg', 1),
-(30, NULL, '2020-04-08 23:12:20', 'jewellery', 'Gold', 'Outside of Aston University.', '2020-01-09', 'A Omega Seamaster with Gold and Black color way. A couple of scratches are present on the frame and a serial code behind the watch.', 'images/1586390906.jpg', 1),
-(29, NULL, NULL, 'phones', 'Black', 'Outside of the Computer Science Building at the University of Birmingham.', '2020-04-14', 'Seemingly the person who own this item also has an oculus rift.', 'images/1586390822.jpg', 1),
-(27, NULL, NULL, 'phones', 'Black and white', 'London England', '2020-03-10', 'Basically brand new.', 'images/1586390643.jpg', 1),
-(28, NULL, NULL, 'pets', 'Orange', 'Outside of Villa Park.', '2020-03-04', 'Was wearing some cool sunglasses and seems to be chipped.', 'images/1586390701.jpg', 1);
+(31, NULL, '2020-04-18 11:57:28', 'jewellery', 'Red and Black Dial with a Black Face', 'London', '2020-02-05', 'Nice condition of the frame and watch glass.', 'images/1586391062.jpg|images/1586391063.jpg', 9),
+(30, NULL, '2020-04-08 23:12:20', 'jewellery', 'Gold', 'Outside of Aston University.', '2020-01-09', 'A Omega Seamaster with Gold and Black color way. A couple of scratches are present on the frame and a serial code behind the watch.', 'images/1586390906.jpg', 9),
+(29, NULL, NULL, 'phones', 'Black', 'Outside of the Computer Science Building at the University of Birmingham.', '2020-04-14', 'Seemingly the person who own this item also has an oculus rift.', 'images/1586390822.jpg', 9),
+(27, NULL, NULL, 'phones', 'Black and white', 'London England', '2020-03-10', 'Basically brand new.', 'images/1586390643.jpg', 9),
+(28, NULL, NULL, 'pets', 'Orange', 'Outside of Villa Park.', '2020-03-04', 'Was wearing some cool sunglasses and seems to be chipped.', 'images/1586390701.jpg', 9);
 
 -- --------------------------------------------------------
 
@@ -121,9 +121,9 @@ CREATE TABLE `requests` (
 --
 
 INSERT INTO `requests` (`id`, `created_at`, `updated_at`, `reason`, `itemid`, `userid`, `approved`) VALUES
-(20, NULL, '2020-04-08 23:17:36', 'Request the item', 29, 1, -1),
-(21, NULL, '2020-04-08 23:17:38', 'Request the item', 28, 1, -1),
-(19, NULL, NULL, 'Request the item', 31, 1, 0);
+(20, NULL, '2020-04-08 23:17:36', 'Request the item', 29, 9, -1),
+(21, NULL, '2020-04-08 23:17:38', 'Request the item', 28, 9, -1),
+(19, NULL, NULL, 'Request the item', 31, 9, 0);
 
 -- --------------------------------------------------------
 
