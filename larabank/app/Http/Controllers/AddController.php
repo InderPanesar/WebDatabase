@@ -43,13 +43,14 @@ class AddController extends Controller
 		$messages = [    
 			'file.max' => 'Can only upload 3 files.',
 			'file.*.mimes' => 'Invalid file formats in the file upload. Must be a .jpg or .jpeg!',
+			'file.*.max' => 'Each image can only be 1mb at max.',
 		];
 
 		//The validator for each value of the form
 		$validator = Validator::make($request->all(), [
 		    'color' => 'required | max:255 | regex:/^[a-zA-Z\s_.-]*$/',
             'file' => 'required | max:3',
-			'file.*' => ' mimes:jpeg,jpg, | max:1000',
+			'file.*' => ' mimes:jpeg,jpg, | max:1024',
 			'location' => 'required | max:255 | regex:/^[a-zA-Z0-9\s_.-]*$/',
 			'text' => 'required | max:255 | regex:/^[a-zA-Z0-9\s_.-]*$/'
 		], $messages);
